@@ -1,15 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import ExpandableTable from "./ExpandableTable";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
-  //TODO grab this state from the API backend
-  const [data] = useState([
-    { name: "John Doe", address: "123 Main St" },
-    { name: "Jane Smith", address: "456 Maple Ave" },
-    { name: "Sam Johnson", address: "789 Oak Dr" },
-  ]);
 
   //TODO have the API serve the data terms we want to see based on the searchTerm
   const handleSearch = () => {
@@ -20,7 +15,7 @@ export default function Home() {
     <div>
       <header className="header">
         <h1 className="margin-0">Patient Management Dashboard</h1>
-        <div className="searchContainer">
+        <div className="search-container">
           <input
             type="text"
             placeholder="Search here..."
@@ -28,28 +23,13 @@ export default function Home() {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="input"
           ></input>
-          <button onClick={handleSearch} className="searchButton">
+          <button onClick={handleSearch} className="search-button">
             Search
           </button>
-          <button className="patientButton"> Add Patient </button>{" "}
+          <button className="patient-button"> Add Patient </button>{" "}
         </div>
       </header>
-      <table className="patientTable">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Address</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, index) => (
-            <tr key={index}>
-              <td>{item.name}</td>
-              <td>{item.address}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <ExpandableTable />
     </div>
   );
 }

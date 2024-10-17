@@ -28,7 +28,7 @@ body {
   background: #f4f4f4;
 }
 
-.searchContainer {
+.search-container {
   display: flex;
   align-items: center;
 }
@@ -38,7 +38,7 @@ body {
   padding: 5px;
 }
 
-.searchButton {
+.search-button {
   background: #0018cd;
   border: 1px solid #171717;
   float: left;
@@ -52,7 +52,7 @@ body {
   width: 100px;
 }
 
-.patientButton {
+.patient-button {
   background: #b100cd;
   border: 1px solid #171717;
   float: left;
@@ -63,12 +63,6 @@ body {
   padding: 0;
   text-align: center;
   width: 100px;
-}
-
-.patientTable {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
 }
 
 @layer utilities {
